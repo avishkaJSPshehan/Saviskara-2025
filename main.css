@@ -122,7 +122,8 @@
   background-size: 150%;
   background-position: right bottom;
   opacity: 0;
-  animation: opacity-fill 2s linear 1s forwards, worrior-2 0.5s linear 5s forwards;
+  animation: opacity-fill 2s linear 1s forwards,
+    worrior-2 0.5s linear 5s forwards;
 }
 
 .logo {
@@ -180,42 +181,63 @@
   animation: opacity-fill 1s linear 5s forwards;
 }
 
-@keyframes logo-mobile {
-  0% {
-    background-position: center center;
-    background-size: 150%;
-  }
-
-  100% {
-    background-position: center center;
-    background-size: 120%;
-  }
-}
-
-@keyframes logo-mobile-2 {
-  0% {
-    background-size: 120%;
-  }
-
-  100% {
-    background-size: 90%;
-    background-position: center top;
-  }
-}
-
-@keyframes worrior-mobile {
-  0% {
-    background-position: 100px 0;
-  }
-
-  100% {
-    background-position: 0 0;
-  }
-}
-
 @media (max-width: 435px) {
+  @keyframes logo-revile-mobile {
+    0% {
+      background-position: center center;
+      background-size: 150%;
+    }
+
+    100% {
+      background-position: center center;
+      background-size: 130%;
+    }
+  }
+
+  @keyframes logo-to-top-mobile {
+    0% {
+      background-position: center center;
+      background-size: 130%;
+    }
+
+    100% {
+      background-size: 110%;
+      background-position: center -15px;
+    }
+  }
+
+  @keyframes worrior-mobile {
+    0% {
+      background-size: 150%;
+    }
+
+    100% {
+      background-size: 160%;
+    }
+  }
+
   .background {
     height: 100%;
+  }
+
+  .background-red {
+    opacity: 0;
+  }
+
+  .worrior-1 {
+    display: none;
+    animation: none;
+  }
+
+  .worrior-2 {
+    width: 100%;
+    height: 300px;
+    bottom: 0;
+    right: 0;
+    opacity: 0%;
+    background-position: right 20px;
+    background-size: 150%;
+    animation: opacity-fill 2s linear 1s forwards, worrior-mobile 0.5s linear 5s forwards;
   }
 
   .logo {
@@ -224,21 +246,22 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 80%;
-    animation: logo-mobile 2s linear, logo-mobile-2 1s linear 2s forwards;
+    background-position: center center;
+    background-size: 130%;
+    animation: logo-revile-mobile 3s linear,
+      logo-to-top-mobile 0.5s linear 5s forwards;
   }
 
-  .worrior-1 {
-    width: 100vw;
-    height: 300px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    top: calc(100vh - 300px);
-    right: 0px;
-    animation: worrior-mobile 1s linear;
+  .paper {
+    background-size: 100%;
   }
 
-  .worrior-2 {
-    display: none;
+  .description {
+    background-size: 75%;
+    background-position: center 200px;
+  }
+  .credit {
+    background-size: 75%;
+    background-position: center bottom;
   }
 }
