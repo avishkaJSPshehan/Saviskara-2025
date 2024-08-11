@@ -2,6 +2,71 @@
   margin: 0;
   padding: 0;
 }
+
+/* Animations */
+
+@keyframes opacity-fill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes opacity-fade {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logo-revile {
+  0% {
+    background-size: 70%;
+    background-position: center center;
+  }
+  100% {
+    background-size: 60%;
+    background-position: center center;
+  }
+}
+
+@keyframes logo-to-top {
+  0% {
+    background-size: 60%;
+    background-position: center center;
+  }
+  100% {
+    background-size: 40%;
+    background-position: center -90px;
+  }
+}
+
+@keyframes worrior-1 {
+  0% {
+    background-size: 150%;
+    background-position: 10px bottom;
+  }
+  100% {
+    background-size: 170%;
+    background-position: -30px bottom;
+  }
+}
+
+@keyframes worrior-2 {
+  0% {
+    background-size: 150%;
+    background-position: right bottom;
+  }
+  100% {
+    background-size: 170%;
+    background-position: -200px bottom;
+  }
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -9,39 +74,143 @@
 }
 
 .background {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-image: url("img/background-scene.png");
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0;
+  animation: opacity-fill 2s linear 1s forwards,
+    opacity-fade 2s linear 5s forwards;
+}
+
+.background-red {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-image: url("img/background-red.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: opacity-fill 1s linear 5s forwards;
 }
 
 .worrior-1 {
-  width: 600px;
-  height: 500px;
-  background-image: url("img/worrior-1.png");
-  background-size: cover;
   position: absolute;
-  top: calc(100vh - 500px);
+  width: 600px;
+  height: 600px;
+  bottom: 0;
   right: 0;
+  background-image: url("img/worrior-1.png");
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: 10px bottom;
+  opacity: 0;
+  animation: opacity-fill 2s linear 1s forwards;
 }
 
 .worrior-2 {
-  width: 900px;
-  height: 500px;
-  background-image: url("img/worrior-2.png");
-  background-size: cover;
   position: absolute;
-  top: calc(100vh - 500px);
-  left: -300px;
+  width: 600px;
+  height: 600px;
+  bottom: 0;
+  left: 0;
+  background-image: url("img/worrior-2.png");
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: right bottom;
+  opacity: 0;
+  animation: opacity-fill 2s linear 1s forwards, worrior-2 0.5s linear 5s forwards;
 }
 
 .logo {
-  width: 900px;
-  height: 500px;
-  margin: 0 auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
   background-image: url("img/logo.png");
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center center;
+  animation: logo-revile 3s linear, logo-to-top 0.5s linear 5s forwards;
+}
+
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-image: url("img/paper.png");
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: center 150px;
+  opacity: 0;
+  animation: opacity-fill 1s linear 5s forwards;
+}
+
+.description {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-image: url("img/description.png");
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-position: center 250px;
+  opacity: 0;
+  animation: opacity-fill 1s linear 5s forwards;
+}
+
+.credit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-image: url("img/credit.png");
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-position: center bottom;
+  opacity: 0;
+  animation: opacity-fill 1s linear 5s forwards;
+}
+
+@keyframes logo-mobile {
+  0% {
+    background-position: center center;
+    background-size: 150%;
+  }
+
+  100% {
+    background-position: center center;
+    background-size: 120%;
+  }
+}
+
+@keyframes logo-mobile-2 {
+  0% {
+    background-size: 120%;
+  }
+
+  100% {
+    background-size: 90%;
+    background-position: center top;
+  }
+}
+
+@keyframes worrior-mobile {
+  0% {
+    background-position: 100px 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
 
 @media (max-width: 435px) {
@@ -53,19 +222,20 @@
     height: 70%;
     width: 100%;
     background-size: contain;
-    background-size: 120%;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: 80%;
+    animation: logo-mobile 2s linear, logo-mobile-2 1s linear 2s forwards;
   }
 
   .worrior-1 {
     width: 100vw;
     height: 300px;
     background-size: cover;
-    /* background-position: 0px 0; */
     background-repeat: no-repeat;
     top: calc(100vh - 300px);
     right: 0px;
+    animation: worrior-mobile 1s linear;
   }
 
   .worrior-2 {
