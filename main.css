@@ -1,3 +1,9 @@
+html,
+body {
+  overflow: hidden; /* Disable scrolling */
+  height: 100%; /* Ensure full-page coverage */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -71,12 +77,13 @@
   width: 100vw;
   height: 100vh;
   background-color: black;
+  padding-top: 30%;
 }
 
 .background {
   height: 100%;
   width: 100%;
-  background-image: url("img/background-scene.png");
+  background-image: url("");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0;
@@ -90,41 +97,40 @@
   width: 100%;
   top: 0;
   right: 0;
-  background-image: url("img/background-red.png");
+  background-image: url("img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: opacity-fill 1s linear 5s forwards;
+  animation: opacity-fill 1s linear 3s forwards;
 }
 
-.worrior-1 {
+/* .worrior-1 {
   position: absolute;
   width: 600px;
   height: 600px;
   bottom: 0;
   right: 0;
-  background-image: url("img/worrior-1.png");
+  background-image: url("img/astro.png");
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: 50%;
   background-position: 10px bottom;
   opacity: 0;
   animation: opacity-fill 2s linear 1s forwards;
-}
+} */
 
-.worrior-2 {
+/* .worrior-2 {
   position: absolute;
   width: 600px;
   height: 600px;
   bottom: 0;
   left: 0;
-  background-image: url("img/worrior-2.png");
+  background-image: url("img/Group\ 6.png");
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: 45%;
   background-position: right bottom;
   opacity: 0;
-  animation: opacity-fill 2s linear 1s forwards,
-    worrior-2 0.5s linear 5s forwards;
-}
+  animation: opacity-fill 2s linear 1s forwards ;
+} */
 
 .logo {
   position: absolute;
@@ -132,7 +138,7 @@
   height: 100%;
   top: 0;
   right: 0;
-  background-image: url("img/logo.png");
+  background-image: url("img/saviskara-logo.png");
   background-repeat: no-repeat;
   background-size: 60%;
   background-position: center center;
@@ -145,7 +151,7 @@
   height: 100%;
   top: 0;
   right: 0;
-  background-image: url("img/paper.png");
+  background-image: url("img/Group\ 8.png");
   background-repeat: no-repeat;
   background-size: 35%;
   background-position: center 150px;
@@ -159,9 +165,9 @@
   height: 100%;
   top: 0;
   right: 0;
-  background-image: url("img/description.png");
+  background-image: url("");
   background-repeat: no-repeat;
-  background-size: 25%;
+  background-size: 50%;
   background-position: center 250px;
   opacity: 0;
   animation: opacity-fill 1s linear 5s forwards;
@@ -173,7 +179,7 @@
   height: 100%;
   top: 0;
   right: 0;
-  background-image: url("img/credit.png");
+  background-image: url("img/pite\ 1.png");
   background-repeat: no-repeat;
   background-size: 25%;
   background-position: center bottom;
@@ -185,7 +191,12 @@
   @keyframes logo-revile-mobile {
     0% {
       background-position: center center;
-      background-size: 150%;
+      background-size: 90%;
+    }
+
+    50% {
+      background-position: center center;
+      background-size: 95%;
     }
 
     100% {
@@ -206,6 +217,7 @@
     }
   }
 
+
   @keyframes worrior-mobile {
     0% {
       background-size: 150%;
@@ -225,10 +237,33 @@
   }
 
   .worrior-1 {
-    display: none;
-    animation: none;
+    position: absolute;
+    width: 65%;
+    height: 30%;
+    bottom: 0;
+    left: 8%;
+    background-image: url("img/astro.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 10px bottom;
+    opacity: 0;
+    animation: opacity-fill 2s linear 3.3s forwards;
   }
 
+  .worrior-2 {
+    position: absolute;
+    width: 30%;
+    height: 20%;
+    bottom: 61%;
+    left: 5%;
+    background-image: url("img/Group\ 6.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: left top;
+    opacity: 0;
+    animation: opacity-fill 2s linear 3.3s forwards;
+  }
+  /* 
   .worrior-2 {
     width: 100%;
     height: 300px;
@@ -238,22 +273,35 @@
     background-position: right 20px;
     background-size: 150%;
     animation: opacity-fill 2s linear 1s forwards, worrior-mobile 0.5s linear 5s forwards;
-  }
+  } */
 
   .logo {
-    height: 70%;
+    height: 100%;
     width: 100%;
+    top: 0%;
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 130%;
-    animation: logo-revile-mobile 3s linear,
-      logo-to-top-mobile 0.5s linear 5s forwards;
+    animation: logo-revile-mobile 1.5s linear,
+      logo-to-top-mobile 0.5s linear 3s forwards;
   }
 
   .paper {
-    background-size: 100%;
+    /* background-size: 100%;
+    top: 140px; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 15%;
+    right: 0;
+    background-image: url("img/Group\ 8.png");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: center 150px;
+    opacity: 0;
+    animation: opacity-fill 1s linear 3s forwards;
   }
 
   .description {
